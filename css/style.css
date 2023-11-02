@@ -1,0 +1,82 @@
+/*Import fonts*/
+@font-face {
+  font-family: "Windows Regular";
+  src: url("../fonts/Windows_Regular.ttf");
+}
+/*Reset default values*/
+body, header, nav, section, main, article, footer {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(7, 0, 200);
+  font-family: "Windows Regular";
+}
+
+.startNavBar {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  bottom: 0;
+  border: 2px outset #636363;
+  background-color: #c5bdc4;
+  
+}
+
+.startNavBar button {
+  font-size: 12px;
+  margin: 2px 2px 0px 2px;
+  border: 1px outset #636363;
+  background-color: #c5bdc4;
+  box-shadow: 1px 1px 0px 1px rgb(34, 34, 34);
+  width: 48px;
+  text-align: left;
+  font-family: "Windows Regular";
+  font-size: 16px;
+}
+
+.startNavBar button:active {
+  margin: 2px 2px 0px 2px;
+  border: 1px inset #636363;
+  background-color: #c5bdc4;
+  box-shadow: inset 1px 1px 0px 0px rgb(34, 34, 34);
+}
+
+.startMenu {
+  
+  margin: 2px 2px 0px 0px;
+  border: 1px outset #636363;
+  background-color: #c5bdc4;
+  position: fixed;
+  z-index: 2;
+  bottom: 23px;
+  left: 0;
+  height: 250px;
+  width: 125px;
+  background-color: #c3c7cb;
+
+}
+
+.banMenu {
+  transform: rotate(-90deg);
+  width: 100%;
+  background-color: #0000aa;
+}
+
+.itemMenu {
+  padding: 10px 0;
+  vertical-align: center;
+  margin: 0 2px;
+}
+
+.itemMenu:hover, .itemMenu:hover a {
+  background-color: #0000aa;
+  color: white;
+}
+
+.itemMenu a {
+  /*display: none;*/
+  color: black;
+  text-decoration: none;
+}

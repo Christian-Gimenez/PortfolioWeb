@@ -19,43 +19,55 @@ body {
   z-index: 2;
   width: 100%;
   bottom: 0;
-  border: 2px outset #636363;
-  background-color: #c5bdc4;
+  border: 2px outset #f3f3f2;
+  background-color: #c0c0c0;
   
 }
 
 .startNavBar button {
   font-size: 12px;
   margin: 2px 2px 0px 2px;
-  border: 1px outset #636363;
-  background-color: #c5bdc4;
-  box-shadow: 1px 1px 0px 1px rgb(34, 34, 34);
+  border: 1px outset #f3f3f2;
+  background-color: #c0c0c0;
+  box-shadow: 0.5px 0.5px 0px 0.5px #090a0a;
   width: 48px;
   text-align: left;
   font-family: "Windows Regular";
   font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .startNavBar button:active {
-  margin: 2px 2px 0px 2px;
-  border: 1px inset #636363;
-  background-color: #c5bdc4;
-  box-shadow: inset 1px 1px 0px 0px rgb(34, 34, 34);
+  border: 1px inset #f3f3f2;
+  background-color: #c0c0c0;
+  box-shadow: inset 1px 1.75px 0px 0px #090a0a;
 }
 
-.startMenu {
+.startNavBar button:active span { 
+  border: 1px dotted #090a0a;
+  position: relative;
+  margin-left: -3px;
+  top: 1px;
+  padding-left: 5px;
+  padding-right: 4px;
+  padding-top: -1px;
+  font-size: 15px;
   
+}
+
+
+.startMenu {
   margin: 2px 2px 0px 0px;
-  border: 1px outset #636363;
-  background-color: #c5bdc4;
+  border: 1px outset #f3f3f2;
+  background-color: #c0c0c0;
   position: fixed;
   z-index: 2;
-  bottom: 23px;
+  bottom: 26.5px;
   left: 0;
   height: 250px;
   width: 125px;
   background-color: #c3c7cb;
-
 }
 
 .banMenu {

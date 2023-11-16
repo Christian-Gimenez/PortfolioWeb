@@ -1,0 +1,12 @@
+/*Import fonts*/
+@font-face {
+  font-family: "Windows Regular";
+  src: url("./fonts/Windows_Regular.ttf");
+}
+
+/*Reset default values*/
+body, header, nav, section, main, article, footer,
+h1, h2, h3, h4, h5, img, button {
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,19 @@
+/*Start Menu when Start button is clicked*/
+.startMenu {
+  /*display: none;*/
+  display: grid;
+  grid-template-columns: 1fr 3fr; /*1st column slim, 2nd large*/
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0;
+  margin: 2px 2px 0px 0px;
+  box-shadow: 0.5px 0.5px 0px 0.5px #090a0a;
+  border: 2px outset #f3f3f2;
+  background-color: #c0c0c0;
+  position: fixed;
+  z-index: 2;
+  bottom: 27px;
+  left: 0;
+  height: 200px;
+  width: 125px;
+  background-color: #c3c7cb;
+}

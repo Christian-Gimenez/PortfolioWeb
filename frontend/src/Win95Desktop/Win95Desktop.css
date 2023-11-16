@@ -1,0 +1,9 @@
+/*General background, font and cursor styles*/
+body {
+  background-color: #008081;
+  font-family: "Windows Regular";
+}
+
+.desktop {
+  cursor: url("../win95-icons/cursor/arrow.cur"), auto;
+}

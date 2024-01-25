@@ -21,7 +21,10 @@ body {
 }
 
 /*Main navbar at the bottom of the desktop*/
-.startNavBar {
+.start-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   position: fixed;
   z-index: 2;
   width: 100%;
@@ -32,7 +35,9 @@ body {
 }
 
 /*Start button*/
-.startNavBar button {
+.start-nav-bar button {
+  display: flex;
+  align-items: center;
   font-size: 12px;
   margin: 2px 2px 0px 2px;
   padding-left: 2px;
@@ -41,41 +46,64 @@ body {
   box-shadow: 0.5px 0.5px 0px 0.5px #090a0a;
   width: 58px;
   height: 25px;
-  text-align: left;
   font-family: "Windows Regular";
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 1px;
 }
 
-.startNavBar button div {
+.start-nav-bar button div {
   display: inline-flex;
   gap: 1px;
 }
 
-.startNavBar button img {
+.start-nav-bar button img {
   width: 20px;
   height: auto;
   object-fit: contain;
 }
 
 /*When Start button is active*/
-.startNavBar button:active {
+.start-nav-bar button:active {
   border: 1px inset #f3f3f2;
   background-color: #c0c0c0;
   box-shadow: inset 1px 1.75px 0px 0px #090a0a;
 }
 
-.startNavBar button:active div { 
+.start-nav-bar button:active div { 
   border: 0.8px dotted #090a0a;
   transform: translateY(1.3px) scale(0.95);
 
 }
 
+@media(max-width: 430px) {
+  .start-nav-bar {
+    height: 45px;
+  }
+
+  .start-nav-bar button {
+    box-shadow: 1px 2px 0px 1px #090a0a;
+    border: 3.5px outset #f3f3f2;
+    width: 85px;
+    height: 43px;
+    font-size: 22px;
+  }
+
+  .start-nav-bar button img {
+    width: 30px;
+  }
+
+  .start-nav-bar button:active div { 
+    border: 1.5px dotted #090a0a;
+    padding: 4px;
+  
+  }
+}
+
 
 
 /*Start Menu when Start button is clicked*/
-.startMenu {
+.start-menu {
   /*display: none;*/
   display: grid;
   grid-template-columns: 1fr 3fr; /*1st column slim, 2nd large*/
@@ -94,8 +122,10 @@ body {
   background-color: #c3c7cb;
 }
 
+
+
 /*Windows95 Logo in the Start Menu*/
-.banMenu {
+.ban-menu {
   grid-column: 1; /*Fill the 1st column*/
   grid-row: span 4; /*Fill all the rows*/
   width: 30px;
@@ -105,33 +135,61 @@ body {
 }
 
 /*Putting the logo in the right place*/
-.banMenu > h2 {
+.ban-menu > h2 {
   transform: rotate(-90deg) translateX(-160px);
 }
 
-.banMenu > h2 > span {
+.ban-menu > h2 > span {
   font-family: Arial;
   font-weight: 100;
   color: #e3e4e4;
 }
 
 /*Each item on the Menu*/
-.itemMenu {
+.item-menu {
   cursor: url("../win95-icons/cursor/Cursor_15.cur"), pointer;
   padding-left: 5px;
   display: flex;
   align-items: center;
 }
 
+@media(max-width: 430px) {
+  .start-menu {
+    width: 100%;
+    height: 350px;
+    grid-template-columns: 20% 80%;
+    bottom: 45px;
+  }
+
+  .ban-menu {
+    width: 100%;
+  }
+
+  .ban-menu > h2 {
+    font-size: 34px;
+    transform: rotate(-90deg) translateX(-280px);
+  }
+
+  .ban-menu > h2 > span {
+    font-size: 40px;
+  }
+
+  .item-menu {
+    font-size: 24px;
+  }
+
+}
+
 /*
-.startMenu a {
+.start-menu a {
   color: black;
   text-decoration: none;
 }*/
 
 /*When passing the cursor below each item*/
-.itemMenu:hover,
-.itemMenu:active {
+.item-menu:hover,
+.item-menu:active {
   background-color: #0000aa;
   color: white;
 }
+

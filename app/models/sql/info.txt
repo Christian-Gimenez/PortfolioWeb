@@ -1,0 +1,2 @@
+#Comand to import the portfolio_DB on LAMP:
+sudo mysql -u root -p < portfolio_DB.sql

@@ -1,4 +1,4 @@
-import { StartBar, StartMenu } from "./startBarClasses.js";
+import { StartBar, StartMenu } from "./StartBarClasses.js";
 
 (function () {
   document.addEventListener("DOMContentLoaded", () => {

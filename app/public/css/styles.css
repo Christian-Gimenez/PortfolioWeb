@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, img, button {
 
 /*General background, font and cursor styles*/
 body {
-  background-color: #008081;
+  background-color: var(--bg-desktop);
   font-family: "Windows Regular";
 }
 
@@ -30,8 +30,8 @@ body {
   width: 100%;
   height: 27px;
   bottom: 0;
-  border: 2px outset #f3f3f2;
-  background-color: #c0c0c0;
+  border: 2px outset var(--light-gray);
+  background-color: var(--navbar-gray);
 }
 
 /*Start button*/
@@ -41,8 +41,8 @@ body {
   font-size: 12px;
   margin: 2px 2px 0px 2px;
   padding-left: 2px;
-  border: 1px outset #f3f3f2;
-  background-color: #c0c0c0;
+  border: 1px outset var(--light-gray);
+  background-color: var(--navbar-gray);
   box-shadow: 0.5px 0.5px 0px 0.5px #090a0a;
   width: 58px;
   height: 25px;
@@ -65,8 +65,8 @@ body {
 
 /*When Start button is active*/
 .start-nav-bar button:active {
-  border: 1px inset #f3f3f2;
-  background-color: #c0c0c0;
+  border: 1px inset var(--light-gray);
+  background-color: var(--navbar-gray);
   box-shadow: inset 1px 1.75px 0px 0px #090a0a;
 }
 
@@ -83,7 +83,7 @@ body {
 
   .start-nav-bar button {
     box-shadow: 1px 2px 0px 1px #090a0a;
-    border: 3.5px outset #f3f3f2;
+    border: 3.5px outset var(--light-gray);
     width: 85px;
     height: 43px;
     font-size: 22px;
@@ -111,15 +111,14 @@ body {
   gap: 0;
   margin: 2px 2px 0px 0px;
   box-shadow: 0.5px 0.5px 0px 0.5px #090a0a;
-  border: 2px outset #f3f3f2;
-  background-color: #c0c0c0;
+  border: 2px outset var(--light-gray);
   position: fixed;
   z-index: 2;
   bottom: 27px;
   left: 0;
   height: 200px;
   width: 125px;
-  background-color: #c3c7cb;
+  background-color: var(--win-gray);
 }
 
 
@@ -131,7 +130,7 @@ body {
   width: 30px;
   font-family: "Arial Black";
   color: #bfc7c8;
-  background-color: #888890;
+  background-color: var(--dark-gray);
 }
 
 /*Putting the logo in the right place*/
@@ -189,7 +188,7 @@ body {
 /*When passing the cursor below each item*/
 .item-menu:hover,
 .item-menu:active {
-  background-color: #0000aa;
+  background-color: var(--dark-blue);
   color: white;
 }
 

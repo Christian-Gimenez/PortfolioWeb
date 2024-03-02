@@ -2,22 +2,27 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  min-width: 250px;
-  min-height: 250px;
+  /* transform: translate(-50%, -50%); */
+  z-index: 10;
+  min-width: 300px;
   display: flex;
   background-color: var(--navbar-gray);
   margin: 2px 2px 0px 0px;
   box-shadow: 0.5px 0.5px 0px 0.5px #090a0a;
   border: 2px outset var(--light-gray);
   padding: 2px;
+  display: flex;
+  flex-direction: column;
 }
 
-.window > nav {
+.window>nav {
+  user-select: none;
+  cursor: move;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-height: 30px;
+  min-height: 26px;
   background-color: var(--dark-blue);
 }
 
@@ -26,15 +31,20 @@
   color: white;
 }
 
-.window > nav > header {
+.window>nav>header {
   margin-left: 3px;
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-.window > nav > form > input,
-.window > nav > form > button {
+.window>nav>header>img {
+  max-width: 20px;
+}
+
+.window>nav>form>input,
+.window>nav>form>button {
+  cursor: pointer;
   padding: 0;
   line-height: 0;
   height: 20px;
@@ -45,15 +55,22 @@
   box-shadow: 0.5px 0.5px 0px 0.5px #090a0a;
 }
 
-.window > nav > form > input:active,
-.window > nav > form > button:active {
-  border: 1px inset var(--light-gray);
+.window>nav>form>input:active,
+.window>nav>form>button:active {
+  
   background-color: var(--navbar-gray);
   box-shadow: inset 1px 1.75px 0px 0px #090a0a;
 }
 
-.window > nav > form > input {
+.window>nav>form>input {
   margin-right: 3px;
 }
 
-
+.window>main {
+  padding: 10px;
+  height: 100%;
+  background-color: var(--light-gray);
+  border: 1px inset var(--light-gray);
+  box-shadow: inset 2px 2px 1px 0px #090a0a;
+  margin-right: 1px;
+}

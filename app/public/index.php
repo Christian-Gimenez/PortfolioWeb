@@ -1,25 +1,14 @@
 <?php
-require_once "../views/head.view.php";
-$windowTitle = "Ejemplo ventana";
-$icoImg = "./win95-icons/png/media_player_stream_no.png";
+//Debugging
+ini_set("display_errors", 1);
+ini_set("display_startup_errors", 1);
+error_reporting(E_ALL);
+
+session_start();
+
+require_once "../views/headView.php";
+require_once "../controllers/windowController.php";
 ?>
-
-<section class="window">
-  <nav>
-    <header>
-      <img src="<?= $icoImg; ?>"/>
-      <h1><?php echo $windowTitle; ?></h1>
-    </header>
-    <form action="" method="GET">
-      <button id="minimizeWindow">&#128469;</button>
-      <button id="maximizeWindow">&#128470;</button>
-      <input type="submit" value="&#128473;" />
-    </form>
-  </nav>
-  <main>
-
-  </main>
-</section>
 
 <nav class="start-nav-bar">
   <button id="startBtn">
@@ -33,25 +22,32 @@ $icoImg = "./win95-icons/png/media_player_stream_no.png";
   <div class="ban-menu">
     <h2>Portfolio<span>Web</span></h2>
   </div>
-  <article class="item-menu">
-    About
-  </article>
+  <form class="item-menu" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
+    <input type="submit" name="Projects" value="Projects" />
+  </form>
 
-  <article class="item-menu">
-    Experience
-  </article>
+  <form class="item-menu" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
+    <input type="submit" name="About" value="About" />
+  </form>
 
-  <article class="item-menu">
-    Knowledge
-  </article>
+  <form class="item-menu" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
+    <input type="submit" name="Knowledge" value="Knowledge" />
+  </form>
 
+  <form class="item-menu" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
+    <input type="submit" name="Education" value="Education" />
+  </form>
 
-  <article class="item-menu">
-    Contact
-  </article>
+  <form class="item-menu" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
+    <input type="submit" name="Experience" value="Experience" />
+  </form>
+
+  <form class="item-menu" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
+    <input type="submit" name="Contact" value="Contact" />
+  </form>
 
 </div>
 
 <?php
-require_once "../views/foot.view.php";
+require_once "../views/footerView.php";
 ?>

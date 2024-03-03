@@ -2,10 +2,11 @@
   document.addEventListener("DOMContentLoaded", () => {
     //Start Button click event to show/hide tha Start Menu
     const startButton = document.querySelector("#startBtn");
-    startButton.addEventListener("click", function (event) {
-      document.querySelector(".start-menu").classList.toggle("hide-element");
-    });
-
+    if(startButton) {
+      startButton.addEventListener("click", function (event) {
+        document.querySelector(".start-menu").classList.toggle("hide-element");
+      });
+    }
     //S
     const actualWindow = document.querySelector(".window");
     if (actualWindow) {

@@ -21,6 +21,45 @@ function createWindow($windowTitle, $iconImg, $content) {
   <?php
 }
 
+function createWindowLogin($windowTitle, $iconImg, $content) {
+  ?>
+  <section class="windowLogin">
+    <nav>
+      <header id="windowHeaderLogin">
+        <img src="<?= $iconImg; ?>"/>
+        <h1><?php echo $windowTitle; ?></h1>
+      </header>
+      <form id="window" action="" method="GET">
+        <button id="infoWindow" name="infoWindow"><b>?</b></button>
+        <input id="closeWindow" type="submit" name="closeWindow" value="&#128473;" />
+      </form>
+    </nav>
+    <main>
+      <?php echo $content; ?>
+    </main>
+  </section>
+  <?php
+}
+
+function createErrorWindow($windowTitle, $iconImg, $content) {
+  ?>
+  <section class="windowError">
+    <nav>
+      <header id="windowHeaderError">
+        <img src="<?= $iconImg; ?>"/>
+        <h1><?php echo $windowTitle; ?></h1>
+      </header>
+      <form id="window" action="" method="GET">
+        <input id="closeWindow" type="submit" name="closeWindow" value="&#128473;" />
+      </form>
+    </nav>
+    <main>
+      <?php echo $content; ?>
+    </main>
+  </section>
+  <?php
+}
+
 if(isset($_GET["Projects"])) {
   //Last to implement
   createWindow("Missing to implement", "./win95-icons/png/msg_warning-0.png", "Lo sentimos, este contenido está pendiente de implementarse.");

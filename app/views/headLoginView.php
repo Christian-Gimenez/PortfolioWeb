@@ -14,4 +14,4 @@
 </head>
 
 <body>
-  <div class="desktop">
+  <div class="desktopLogin">

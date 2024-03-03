@@ -33,6 +33,14 @@ body {
 .desktop {
   cursor: url("../win95-icons/cursor/arrow.cur"), auto;
 } */
+/*Only in login page*/
+.desktopLogin {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /*Main navbar at the bottom of the desktop*/
 .start-nav-bar {

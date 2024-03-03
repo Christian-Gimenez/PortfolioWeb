@@ -1,7 +1,7 @@
 .window {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 30%;
+  top: 40%;
   /* transform: translate(-50%, -50%); */
   z-index: 10;
   min-width: 300px;
@@ -15,9 +15,91 @@
   flex-direction: column;
 }
 
-.window>nav {
+.windowLogin {
+  max-width: 620px;
+  display: flex;
+  background-color: var(--navbar-gray);
+  margin: 2px 2px 0px 0px;
+  box-shadow: 0.5px 0.5px 0px 0.5px #090a0a;
+  border: 2px outset var(--light-gray);
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+}
+
+.windowLogin>main>form {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.windowLogin>main>form>caption {
+  flex: 1 1 0;
+
+}
+
+.windowLogin>main>form>img {
+  margin: 20px 10px 10px 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.windowLogin>main>form>div:first-child {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.windowLogin>main>form label[for=userName] {
+  margin-right: 18px;
+}
+
+.windowLogin>main>form label[for=userPassword] {
+  margin-right: 23px;
+}
+
+.windowLogin>main>form input[type=text],
+.windowLogin>main>form input[type=password] {
+  border: 1.5px inset var(--light-gray);
+  box-shadow: inset 1px 1px 0px 0px #090a0a;
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+
+.windowLogin>main>form>div:last-child {
+  margin-top: 15px;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.windowLogin>main>form>div:last-child input {
+  width: 80px;
+  height: 25px;
+  line-height: 0;
+  cursor: pointer;
+  font-family: "Windows Regular";
+  border: 1px outset var(--light-gray);
+  background-color: var(--navbar-gray);
+  box-shadow: 0.5px 0.5px 0px 0.5px #090a0a;
+}
+
+.windowLogin>main>form>div:last-child input:last-child {
+  box-shadow: 1px 1px 0px 1.5px #090a0a;
+}
+
+
+.windowLogin>main>form>div:last-child input:active {
+  border: 1px inset var(--light-gray);
+  background-color: var(--navbar-gray);
+  box-shadow: inset 1px 1.75px 0px 0px #090a0a;
+}
+
+.window>nav,
+.windowLogin>nav {
   user-select: none;
-  cursor: move;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,24 +108,34 @@
   background-color: var(--dark-blue);
 }
 
-.window h1 {
-  font-size: 14px;
+.window>nav {
+  cursor: move;
+}
+
+.window h1,
+.windowLogin h1 {
+  font-size: 16px;
+  letter-spacing: 1px;
   color: white;
 }
 
-.window>nav>header {
+.window>nav>header,
+.windowLogin>nav>header {
   margin-left: 3px;
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-.window>nav>header>img {
+.window>nav>header>img,
+.windowLogin>nav>header>img {
   max-width: 20px;
 }
 
 .window>nav>form>input,
-.window>nav>form>button {
+.window>nav>form>button,
+.windowLogin>nav>form>input,
+.windowLogin>nav>form>button {
   cursor: pointer;
   padding: 0;
   line-height: 0;
@@ -56,21 +148,28 @@
 }
 
 .window>nav>form>input:active,
-.window>nav>form>button:active {
-  
+.window>nav>form>button:active,
+.windowLogin>nav>form>input:active,
+.windowLogin>nav>form>button:active  {
   background-color: var(--navbar-gray);
   box-shadow: inset 1px 1.75px 0px 0px #090a0a;
 }
 
-.window>nav>form>input {
+.window>nav>form>input,
+.windowLogin>nav>form>input {
   margin-right: 3px;
 }
 
 .window>main {
-  padding: 10px;
-  height: 100%;
   background-color: var(--light-gray);
   border: 1px inset var(--light-gray);
   box-shadow: inset 2px 2px 1px 0px #090a0a;
+}
+
+.window>main,
+.windowLogin>main {
+  padding: 10px;
+  height: 100%;
   margin-right: 1px;
 }
+

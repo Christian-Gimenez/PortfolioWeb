@@ -12,10 +12,15 @@ require_once "../controllers/windowController.php";
 if(isset($_GET["login"])) {
   if($_GET["login"] === "error") {
     createErrorWindow("Login Error", "./win95-icons/png/media_player_stream_no.png", "
-    <img src='./win95-icons/png/media_player_stream_no.png'/>
-    <p>Error: Incorrect user credentials. Please, if you are not an administrator, <b>log in as a guest</b></p>
+    <figure class='errorMessage'>
+      <img src='./win95-icons/png/msg_error-0.png'/>
+      <figcaption>
+        Incorrect user credentials. <br/>Please, if you are not an administrator, <b>log in as a guest</b>
+      </figcaption>
+    </figure>
+  
     <form>
-      <input type='submit' name='closeWindow' value='OK' />
+      <button type='submit' name='closeWindow'/><span>OK</span></button>
     </form>
     ");
   
@@ -23,9 +28,9 @@ if(isset($_GET["login"])) {
 } else {
   createWindowLogin("Welcome to Christian-Gimenez's PortfolioWeb", "./win95-icons/png/user_computer-1.png", "
     <form action='../controllers/access.php' method='POST'>
-      <caption>
+      <figure>
         <img src='./win95-icons/png/key_padlock-0.png'/>
-      </caption>
+      </figure>
       
       <div>
         <p>Type a user name and password to log on to PortfolioWeb.

@@ -1,4 +1,5 @@
 :root {
+  user-select: none;
   --dark-gray: #888890;
   --navbar-gray: #c0c0c0;
   --light-gray: #f3f3f2; 

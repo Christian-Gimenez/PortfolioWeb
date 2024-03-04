@@ -8,3 +8,22 @@
   width: 100%;
   height: 100vh;
 }
+
+.transparent main,
+.transparent nav {
+  visibility: hidden !important;
+}
+
+.transparent {
+  background-color: transparent !important;
+  border-width: 7.5px !important;
+  border-image: dashed 3px inset #646464 !important;
+  box-shadow: none !important;
+}
+
+.hide-window-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}

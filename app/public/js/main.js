@@ -1,3 +1,5 @@
+// import {  } from "../js/js_calendar/controladorCalendario.js";
+
 (function () {
   document.addEventListener("DOMContentLoaded", () => {
     //Start Button click event to show/hide tha Start Menu
@@ -109,9 +111,12 @@
           (navigator.language || navigator.userLanguage || "es-ES"), options);
         return formatedDate;
       }
-    }
 
-    
+      // dateTime.addEventListener("click", function(e) {
+      //   const calendar = document.createElement("div");
+
+      // })
+    }
   });
 
 

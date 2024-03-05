@@ -8,6 +8,10 @@ session_start();
 
 require_once "../views/headView.php";
 require_once "../controllers/windowController.php";
+require_once "../views/desktopIconsView.php";
+
+createDesktopTemplate(6, 12, createIconsArray());
+
 ?>
 
 <nav class="start-nav-bar">
@@ -18,7 +22,11 @@ require_once "../controllers/windowController.php";
     </div>
   </button>
   <div id="actualApp" class="hide-element"></div>
-  <div id="dateTime"><span id="time"></span><span id="date"></span></div>
+  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get" id="dateTime">
+    <button type="submit" name="Calendar">
+      <span id="time"></span><span id="date"></span>
+    </button>
+  </form>
 </nav>
 <div class="start-menu hide-element">
   <div class="ban-menu">

@@ -3,13 +3,35 @@
 function createWindow($windowTitle, $iconImg, $content)
 {
 ?>
+  <section class="window">
+    <nav>
+      <header id="windowHeader">
+        <img src="<?= $iconImg; ?>" />
+        <h1><?php echo $windowTitle; ?></h1>
+      </header>
+      <form id="window" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="GET">
+        <button id="minimizeWindow" name="minimizeWindow">&#128469;</button>
+        <button id="maximizeWindow" name="maximizeWindow">&#128470;</button>
+        <input id="closeWindow" type="submit" name="closeWindow" value="&#128473;" />
+      </form>
+    </nav>
+    <main>
+      <?php echo $content; ?>
+    </main>
+  </section>
+<?php
+}
+
+function createWindowWithContent($windowTitle, $iconImg, $content)
+{
+?>
   <section class="window windowWithContent">
     <nav>
       <header id="windowHeader">
         <img src="<?= $iconImg; ?>" />
         <h1><?php echo $windowTitle; ?></h1>
       </header>
-      <form id="window" action="" method="GET">
+      <form id="window" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="GET">
         <button id="minimizeWindow" name="minimizeWindow">&#128469;</button>
         <button id="maximizeWindow" name="maximizeWindow">&#128470;</button>
         <input id="closeWindow" type="submit" name="closeWindow" value="&#128473;" />
@@ -31,7 +53,7 @@ function createWindowLogin($windowTitle, $iconImg, $content)
         <img src="<?= $iconImg; ?>" />
         <h1><?php echo $windowTitle; ?></h1>
       </header>
-      <form id="window" action="" method="GET">
+      <form id="window" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="GET">
         <!-- <button id="infoWindow" name="infoWindow"><b>?</b></button> -->
         <input id="closeWindow" type="submit" name="closeWindow" value="&#128473;" />
       </form>
@@ -53,7 +75,7 @@ function createWindowLogout($windowTitle, $iconImg, $content)
           <img src="<?= $iconImg; ?>" />
           <h1><?php echo $windowTitle; ?></h1>
         </header>
-        <form id="window" action="" method="GET">
+        <form id="window" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="GET">
           <!-- <button id="infoWindow" name="infoWindow"><b>?</b></button> -->
           <input id="closeWindow" type="submit" name="closeWindow" value="&#128473;" />
         </form>
@@ -75,7 +97,7 @@ function createErrorWindow($windowTitle, $iconImg, $content)
         <img src="<?= $iconImg; ?>" />
         <h1><?php echo $windowTitle; ?></h1>
       </header>
-      <form id="window" action="" method="GET">
+      <form id="window" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="GET">
         <input id="closeWindow" type="submit" name="closeWindow" value="&#128473;" />
       </form>
     </nav>
@@ -88,20 +110,20 @@ function createErrorWindow($windowTitle, $iconImg, $content)
 
 if (isset($_GET["Projects"])) {
   //Last to implement
-  createWindow("Missing to implement", "./win95-icons/png/msg_warning-0.png", "Lo sentimos, este contenido está pendiente de implementarse.");
+  createWindow("Can not launch 'Projects'", "./win95-icons/png/msg_warning-0.png", "Warning: This content is not available yet.");
 } else if (isset($_GET["About"])) {
-  createWindow("About me", "./win95-icons/png/user_computer-1.png", "Sobre mi");
+  createWindow("About me", "./win95-icons/png/help_book_cool-0.png", "Sobre mi");
 } else if (isset($_GET["Knowledge"])) {
-  createWindow("Knowledge and Technology skills", "./win95-icons/png/odbc-5.png", "Conocimientos tecnológicos");
+  createWindow("Knowledge and Technology skills", "./win95-icons/png/program_manager-1.png", "Conocimientos tecnológicos");
 } else if (isset($_GET["Education"])) {
-  createWindow("Educational background", "./win95-icons/png/odbc-5.png", "Conocimientos tecnológicos");
+  createWindow("Educational background", "./win95-icons/png/certificate_seal.png", "Conocimientos tecnológicos");
 } else if (isset($_GET["Experience"])) {
   createWindow("Working experience", "./win95-icons/png/user_card.png", "Experiencia laboral");
 } else if (isset($_GET["Contact"])) {
-  createWindow("Contact", "./win95-icons/png/outlook_express-4.png", "Formulario contacto");
+  createWindow("Contact", "./win95-icons/png/outlook_express-5.png", "Formulario contacto");
 } else if (isset($_GET["LogOff"])) {
   createWindowLogout("Logging out of PortfolioWeb", "./win95-icons/png/user_computer-1.png", "
-  <form class='logOffForm' action='../controllers/logoff.php' method='GET'>
+  <form class='logOffForm' action='" . htmlspecialchars("../controllers/logoff.php") . "' method='GET'>
     <figure>
       <img src='./win95-icons/png/keys-5.png'/>
       <figcaption>Are you sure you want to log out?</figcaption>
@@ -115,4 +137,29 @@ if (isset($_GET["Projects"])) {
 </form>
   ");
 } else if (isset($_GET["ShutDown"])) {
+  createWindow("Can not launch 'Shut Down'", "./win95-icons/png/msg_warning-0.png", "Warning: This content is not available yet.");
+
+} else if(isset($_GET["mypc"])) {
+  createWindow("Can not launch 'My Computer'", "./win95-icons/png/msg_warning-0.png", "Warning: This content is not available yet.");
+
+} else if(isset($_GET["network"])) {
+  createWindow("Can not launch 'Network Cofiguration'", "./win95-icons/png/msg_warning-0.png", "Warning: This content is not available yet.");
+
+} else if(isset($_GET["linkedin"])) {
+  createWindow("Can not launch 'Linkedin'", "./win95-icons/png/msg_warning-0.png", "Warning: This content is not available yet.");
+
+} else if(isset($_GET["github"])) {
+  createWindow("Can not launch 'Github'", "./win95-icons/png/msg_warning-0.png", "Warning: This content is not available yet.");
+
+} else if(isset($_GET["inbox"])) {
+  createWindow("Can not launch 'Inbox'", "./win95-icons/png/msg_warning-0.png", "Warning: This content is not available yet.");
+
+} else if(isset($_GET["recyclebin"])) {
+  createWindow("Can not launch 'Recycle Bin'", "./win95-icons/png/msg_warning-0.png", "Warning: This content is not available yet.");
+
+} else if(isset($_GET["Calendar"])) {
+  createWindowWithContent("Calendar", "./win95-icons/png/calendar-1.png", "
+  <iframe src='./js/js_calendar/index.html' width='100%' height='260' frameborder='0' allowfullscreen></iframe>
+  ");
+
 }

@@ -9,8 +9,10 @@
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="./css/app_classes.css">
   <link rel="stylesheet" href="./css/window.css">
+  <link rel="stylesheet" href="./css/desktop_icons.css">
   <title>PortfolioWeb - Christian Giménez</title>
   <script type="module" src="./js/main.js"></script>
+  <script type="module" src="./js/dragNdrop.js"></script>
 </head>
 
 <body>

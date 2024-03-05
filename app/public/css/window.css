@@ -169,10 +169,20 @@
 }
 
 .windowWithContent>main {
+  margin-top: 5px;
+  padding: 0px !important;
+  height: auto;
   font-size: 20px;
   background-color: var(--light-gray);
   border: 1.5px inset var(--light-gray);
   box-shadow: inset 3px 3px 1.5px 0px #090a0a;
+}
+
+.windowWithContent>main>iframe {
+  width: 100%;
+  min-height: 256px;
+  height: 100%;
+  overflow: hidden;
 }
 
 .window>main,

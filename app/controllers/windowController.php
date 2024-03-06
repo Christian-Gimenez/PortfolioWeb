@@ -22,6 +22,28 @@ function createWindow($windowTitle, $iconImg, $content)
 <?php
 }
 
+function createWelcomeWindow($windowTitle, $iconImg, $content)
+{
+?>
+  <section class="window welcomeWindow">
+    <nav>
+      <header id="windowHeader">
+        <img src="<?= $iconImg; ?>" />
+        <h1><?php echo $windowTitle; ?></h1>
+      </header>
+      <form id="window" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="GET">
+        <!-- <button id="minimizeWindow" name="minimizeWindow">&#128469;</button>
+        <button id="maximizeWindow" name="maximizeWindow">&#128470;</button> -->
+        <input id="closeWindow" type="submit" name="closeWindow" value="&#128473;" />
+      </form>
+    </nav>
+    <main>
+      <?php echo $content; ?>
+    </main>
+  </section>
+<?php
+}
+
 function createWindowWithContent($windowTitle, $iconImg, $content)
 {
 ?>

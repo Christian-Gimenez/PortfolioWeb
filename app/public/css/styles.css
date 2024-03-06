@@ -27,6 +27,8 @@ h2,
 h3,
 h4,
 h5,
+p,
+div,
 img,
 button {
   margin: 0;
@@ -118,6 +120,7 @@ body {
   font-weight: bolder;
   padding-left: 8px;
   padding-top: 7px;
+  height: 35px !important
 }
 
 #actualAppDisplay img {
@@ -148,30 +151,6 @@ body {
 
 #dateTime button span:first-of-type {
   margin-top: 3px;
-}
-
-@media(max-width: 430px) {
-  .start-nav-bar {
-    height: 67.5px;
-  }
-
-  .start-nav-bar button:not([name="Calendar"]) {
-    box-shadow: 1.5px 3px 0px 1.5px #090a0a;
-    border: 5.25px outset var(--light-gray);
-    width: 127.5px;
-    height: 64.5px;
-    font-size: 33px;
-  }
-
-  .start-nav-bar button:not([name="Calendar"]) img {
-    width: 45px;
-  }
-
-  .start-nav-bar button:active:not([name="Calendar"]) div {
-    border: 2.25px dotted #090a0a;
-    padding: 6px;
-
-  }
 }
 
 
@@ -261,7 +240,43 @@ body {
   border-top: outset 1px white;
 }
 
+/*
+.start-menu a {
+  color: black;
+  text-decoration: none;
+}*/
+
+/*When passing the cursor below each item*/
+.item-menu:hover,
+.item-menu:active {
+  background-color: var(--dark-blue);
+  color: white;
+}
+
+/*Horizontal Media Queries*/
 @media(max-width: 430px) {
+  .start-nav-bar {
+    height: 67.5px;
+  }
+
+  .start-nav-bar button:not([name="Calendar"]) {
+    box-shadow: 1.5px 3px 0px 1.5px #090a0a;
+    border: 5.25px outset var(--light-gray);
+    width: 127.5px;
+    height: 64.5px;
+    font-size: 33px;
+  }
+
+  .start-nav-bar button:not([name="Calendar"]) img {
+    width: 45px;
+  }
+
+  .start-nav-bar button:active:not([name="Calendar"]) div {
+    border: 2.25px dotted #090a0a;
+    padding: 6px;
+
+  }
+
   .start-menu {
     width: 100%;
     height: 525px;
@@ -281,30 +296,4 @@ body {
   .item-menu {
     font-size: 36px;
   }
-
-}
-
-/*
-.start-menu a {
-  color: black;
-  text-decoration: none;
-}*/
-
-/*When passing the cursor below each item*/
-.item-menu:hover,
-.item-menu:active {
-  background-color: var(--dark-blue);
-  color: white;
-}
-
-.welcome .profile-img {
-  width: 200px;
-  border: 4px inset var(--light-gray);
-  background-color: var(--navbar-gray);
-  box-shadow: inset 1.5px 2.63px 0px 0px #090a0a;
-}
-
-.welcome h1 {
-  font-size: 20px;
-  color: black !important;
 }

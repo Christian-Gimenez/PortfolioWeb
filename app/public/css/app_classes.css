@@ -9,6 +9,7 @@
 
 .invisible {
   opacity: 0;
+  cursor: default !important;
 }
 
 .full-screen {

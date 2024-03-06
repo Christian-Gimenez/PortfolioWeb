@@ -33,8 +33,8 @@
       display.classList.add("active-window");
 
       display.addEventListener("click", function(event) {
-        actualWindow.classList.remove("hide-window");
-        display.classList.add("active-window");
+        actualWindow.classList.toggle("hide-window");
+        display.classList.toggle("active-window");
       })
 
 

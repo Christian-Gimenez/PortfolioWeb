@@ -1,8 +1,8 @@
 .window {
   font-size: 20px;
   position: absolute;
-  left: 30%;
-  top: 40%;
+  left: 20%;
+  top: 5%;
   /* transform: translate(-50%, -50%); */
   z-index: 10;
   min-width: 450px;

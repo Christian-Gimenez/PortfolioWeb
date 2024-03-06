@@ -27,7 +27,7 @@ if(isset($_GET["login"])) {
   } 
 } else {
   createWindowLogin("Welcome to Christian-Gimenez's PortfolioWeb", "./win95-icons/png/user_computer-1.png", "
-    <form action='../controllers/access.php' method='POST'>
+    <form action='" . htmlspecialchars("../controllers/access.php") . "' method='POST'>
       <figure>
         <img src='./win95-icons/png/key_padlock-0.png'/>
       </figure>

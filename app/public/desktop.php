@@ -11,6 +11,15 @@ require_once "../controllers/windowController.php";
 require_once "../views/desktopIconsView.php";
 
 createDesktopTemplate(6, 12, createIconsArray());
+if ($_SESSION["first_login"]) {
+  $_SESSION["first_login"] = false;
+  createWindow("Welcome to my PortfolioWeb", "", "
+  <section class='welcome'>
+    <h1>Welcome to Christian-Gimenez's PortfolioWeb</h1>
+    <img class='profile-img' src='./imgs/Christian-Gimenez_Profile.jpeg'>
+  </section>
+  ");
+}
 
 ?>
 
@@ -21,7 +30,7 @@ createDesktopTemplate(6, 12, createIconsArray());
       Start
     </div>
   </button>
-  <div id="actualApp" class="hide-element"></div>
+  <button id="actualAppDisplay" class="invisible"></button>
   <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get" id="dateTime">
     <button type="submit" name="Calendar">
       <span id="time"></span><span id="date"></span>

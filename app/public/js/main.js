@@ -9,16 +9,36 @@
         document.querySelector(".start-menu").classList.toggle("hide-element");
       });
 
-      startButton.addEventListener("focusout", function(event) {
+      startButton.addEventListener("blur", function (event) {
         setTimeout(() => { //Waiting a bit for fixing a bug
           document.querySelector(".start-menu").classList.toggle("hide-element");
         }, 200);
 
       });
     }
-    //Window move effect
+
     const actualWindow = document.querySelector(".window:not(.windowLogin):not(.windowError):not(.windowLogout)");
     if (actualWindow) {
+      //Minimize effect
+      const display = document.querySelector("#actualAppDisplay");
+      const h1 = document.querySelector(".window h1");
+      const img = document.querySelector(".window nav img");
+      let title = h1.innerText;
+      if (title.length > 23) {
+        title = title.substring(0, 23) + "...";
+      }
+      display.innerHTML = "<img src='" + img.getAttribute("src") + "'>" + title;
+
+      display.classList.remove("invisible");
+      display.classList.add("active-window");
+
+      display.addEventListener("click", function(event) {
+        actualWindow.classList.remove("hide-window");
+        display.classList.add("active-window");
+      })
+
+
+      //Window move effect
       let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
       const windowHeader = document.querySelector("#windowHeader");
 
@@ -40,11 +60,11 @@
         pos2 = pos4 - event.clientY;
         pos3 = event.clientX;
         pos4 = event.clientY;
-        
+
 
         actualWindow.style.top = (actualWindow.offsetTop - pos2) + "px";
         actualWindow.style.left = (actualWindow.offsetLeft - pos1) + "px";
- 
+
       }
 
       function closeDragElement() {
@@ -58,6 +78,8 @@
       if (minimize) {
         minimize.addEventListener("click", function (event) {
           event.preventDefault();
+          actualWindow.classList.add("hide-window");
+          display.classList.remove("active-window");
         });
       }
 
@@ -79,7 +101,7 @@
 
     //Date and hour display at bottom right of the nav bar
     const dateTime = document.querySelector("#dateTime");
-    if(dateTime) {
+    if (dateTime) {
       const time = document.querySelector("#time");
       let lastHour = "";
       const date = document.querySelector("#date");
@@ -92,21 +114,21 @@
         let hours = now.getHours();
         let mins = now.getMinutes();
         let am_pm = hours >= 12 ? "PM" : "AM";
-  
+
         hours = hours % 12;
         hours = hours ? hours : 12;
         mins = mins < 10 ? "0" + mins : mins;
-  
+
         const formatedHour = hours + ":" + mins + " " + am_pm;
-        if(formatedHour !== lastHour) {
+        if (formatedHour !== lastHour) {
           time.innerText = formatedHour;
           lastHour = formatedHour;
         }
       }
-  
+
       function getActualDate() {
         const now = new Date();
-        const options = {day: "2-digit", month: "2-digit", year: "numeric"};
+        const options = { day: "2-digit", month: "2-digit", year: "numeric" };
         const formatedDate = now.toLocaleString(
           (navigator.language || navigator.userLanguage || "es-ES"), options);
         return formatedDate;

@@ -1,5 +1,14 @@
 .hide-element {
-  display: none;
+  display: none !important;
+}
+
+.hide-window {
+  display: none !important;
+  /* transition: transform 2s ease-out; */
+}
+
+.invisible {
+  opacity: 0;
 }
 
 .full-screen {
@@ -31,4 +40,9 @@
 
 .dragged-icon {
   background-color: rgba(0, 41, 177, 0.5);
+}
+
+.active-window {
+  background-color: var(--light-gray) !important;
+  box-shadow: inset 1.5px 2.63px 0px 0px #090a0a !important;
 }

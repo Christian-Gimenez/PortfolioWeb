@@ -8,6 +8,7 @@ session_start();
 
 if(isset($_POST["guest_login"])) {
   $_SESSION["admin_user_authenticated"] = false;
+  $_SESSION["first_login"] = true;
   header("Location: ../public/desktop.php?login=true");
   exit();
 } else if (isset($_POST["ok"])) {

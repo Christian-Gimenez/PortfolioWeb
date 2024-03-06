@@ -11,41 +11,44 @@ require_once "../controllers/windowController.php";
 require_once "../views/desktopIconsView.php";
 
 createDesktopTemplate(6, 12, createIconsArray());
-if ($_SESSION["first_login"]) {
-  $_SESSION["first_login"] = false;
-  createWelcomeWindow("Welcome to my PortfolioWeb", "./win95-icons/png/MOD-windows-0.png", "
-  <section class='welcome'>
-    <div>
-      <h1>Welcome to <br/><span class='big-logo'>Portfolio</span><span class='little-logo'>Web</span></h1>
-      <figure>
-        <img class='profile-img' src='./imgs/Christian-Gimenez_Profile.jpeg'>
-        <figcaption>by: <strong>Christian-Gimenez</strong></figcaption>    
-      </figure>
-    </div>
-
-    <article>
-      <p>
-        Welcome to my web portfolio! Here, you'll discover an application that replicates the interface of a classic operating system.
-        Explore the projects I've been involved in, the programming technologies I've mastered, get in touch with me, and delve into details about my skills and work experience.
-        Developed using <strong>PHP, MariaDB, HTML5, CSS3, and JavaScript</strong>, this project reflects the expertise I gained
-        during Higher Vocational Education in Web Application Development. The code is fully open and accessible on <a href='https://github.com/Christian-Gimenez/PortfolioWeb'>Github</a>.
-        This website goes beyond being a mere presentation; it incorporates a CRUD system, empowering the admin user to intuitively manage data
-        with a nostalgic touch.
-      </p>
- 
-    </article>
-  </section>
-  ");
-// Español
-//  <p>
-//    ¡Bienvenido a mi portfolio web! Aquí encontrarás una aplicación que simula la interfaz de un sistema operativo clásico.
-//    Descubre los proyectos en los que he trabajado, las tecnologías que domino, ponerte en contacto conmigo y ver detalles sobre mis conocimientos y experiencia laboral.
-//    Desarrollado con <strong>PHP, MariaDB, HTML5, CSS3 y JavaScript</strong>, este proyecto refleja mis conocimientos adquiridos
-//    en el grado superior de desarrollo de aplicaciones web. El código es 100% abierto y está en <a href='https://github.com/Christian-Gimenez/PortfolioWeb'>Github</a>.
-//    Esta web no es solo una presentación, sino que incluye un sistema CRUD para que el usuario administrador pueda gestionar datos de manera intuitiva
-//    y con un toque retro.
-//  </p>
+if (isset($_SESSION["first_login"])) {
+  if ($_SESSION["first_login"]) {
+    $_SESSION["first_login"] = false;
+    createWelcomeWindow("Welcome to my PortfolioWeb", "./win95-icons/png/MOD-windows-0.png", "
+    <section class='welcome'>
+      <div>
+        <h1>Welcome to <br/><span class='big-logo'>Portfolio</span><span class='little-logo'>Web</span></h1>
+        <figure>
+          <img class='profile-img' src='./imgs/Christian-Gimenez_Profile.jpeg'>
+          <figcaption>by: <strong>Christian-Gimenez</strong></figcaption>    
+        </figure>
+      </div>
+  
+      <article>
+        <p>
+          Welcome to my web portfolio! Here, you'll discover an application that replicates the interface of a classic operating system.
+          Explore the projects I've been involved in, the programming technologies I've mastered, get in touch with me, and delve into details about my skills and work experience.
+          Developed using <strong>PHP, MariaDB, HTML5, CSS3, and JavaScript</strong>, this project reflects the expertise I gained
+          during Higher Vocational Education in Web Application Development. The code is fully open and accessible on <a href='https://github.com/Christian-Gimenez/PortfolioWeb'>Github</a>.
+          This website goes beyond being a mere presentation; it incorporates a CRUD system, empowering the admin user to intuitively manage data
+          with a nostalgic touch.
+        </p>
+   
+      </article>
+    </section>
+    ");
+    // Español
+    //  <p>
+    //    ¡Bienvenido a mi portfolio web! Aquí encontrarás una aplicación que simula la interfaz de un sistema operativo clásico.
+    //    Descubre los proyectos en los que he trabajado, las tecnologías que domino, ponerte en contacto conmigo y ver detalles sobre mis conocimientos y experiencia laboral.
+    //    Desarrollado con <strong>PHP, MariaDB, HTML5, CSS3 y JavaScript</strong>, este proyecto refleja mis conocimientos adquiridos
+    //    en el grado superior de desarrollo de aplicaciones web. El código es 100% abierto y está en <a href='https://github.com/Christian-Gimenez/PortfolioWeb'>Github</a>.
+    //    Esta web no es solo una presentación, sino que incluye un sistema CRUD para que el usuario administrador pueda gestionar datos de manera intuitiva
+    //    y con un toque retro.
+    //  </p>
+  }
 }
+
 
 ?>
 

@@ -29,6 +29,22 @@ function createIconsArray()
   return $iconsArr;
 }
 
+function createAdminIconsArray()
+{
+  $iconsArr = [];
+  array_push(
+    $iconsArr,
+    createDesktopIcon("controlpanel", "./win95-icons/png/monitor_tweakui-0.png", "Control Panel"),
+    createDesktopIcon("mypc", "./win95-icons/png/computer_explorer_cool-0.png", "My Computer"),
+    createDesktopIcon("network", "./win95-icons/png/network_normal_two_pcs-5.png", "Network Configuration"),
+    createDesktopIcon("linkedin", "./win95-icons/png/user_world-1.png", "Linkedin", "https://www.linkedin.com/in/christian-m-gp"),
+    createDesktopIcon("github", "./win95-icons/png/console_prompt-0.png", "Github", "https://github.com/Christian-Gimenez"),
+    createDesktopIcon("inbox", "./win95-icons/png/mailbox_world-2.png", "Inbox"),
+    createDesktopIcon("recyclebin", "./win95-icons/png/recycle_bin_full-2.png", "Recycle Bin")
+  );
+  return $iconsArr;
+}
+
 function createDesktopTemplate($rows, $cols, $iconsArr)
 {
   echo "<main class='desktopIconsContainer'>";

@@ -19,7 +19,7 @@ if(isset($_GET["login"])) {
       </figcaption>
     </figure>
   
-    <form>
+    <form action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "' method='POST'>
       <button type='submit' name='closeWindow'/><span>OK</span></button>
     </form>
     ");

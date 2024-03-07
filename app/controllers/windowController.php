@@ -183,5 +183,19 @@ if (isset($_GET["Projects"])) {
   createWindowWithContent("Calendar", "./win95-icons/png/calendar-1.png", "
   <iframe src='./js/js_calendar/index.html' width='100%' height='260' frameborder='0' allowfullscreen></iframe>
   ");
-
+} else if(isset($_GET["controlpanel"])) {
+  require_once "../views/desktopIconsView.php";
+  createWindowWithContent("Control Panel", "./win95-icons/png/monitor_tweakui-0.png", 
+  ""
+ . createDesktopIcon("Projects", "./win95-icons/png/shell_window6-0.png", "Projects")
+ . createDesktopIcon("About", "./win95-icons/png/help_book_cool-0.png", "About me")
+ . createDesktopIcon("Knowledge", "./win95-icons/png/program_manager-1.png", "Knowledge")
+ . createDesktopIcon("Education", "./win95-icons/png/certificate_seal.png", "Education")
+ . createDesktopIcon("Experience", "./win95-icons/png/user_card.png", "Experience")
+ . createDesktopIcon("Contact", "./win95-icons/png/outlook_express-5.png", "Contact")
+ . createDesktopIcon("mypc", "./win95-icons/png/computer_explorer_cool-0.png", "My Computer")
+ . createDesktopIcon("linkedin", "./win95-icons/png/user_world-1.png", "Linkedin", "https://www.linkedin.com/in/christian-m-gp")
+ . createDesktopIcon("github", "./win95-icons/png/console_prompt-0.png", "Github", "https://github.com/Christian-Gimenez")
+ . createDesktopIcon("inbox", "./win95-icons/png/mailbox_world-2.png", "Inbox")
+);
 }

@@ -11,6 +11,7 @@ if(isset($_POST["guest_login"])) {
   $_SESSION["first_login"] = true;
   header("Location: ../public/desktop.php?login=true");
   exit();
+
 } else if (isset($_POST["ok"])) {
   $user = $_POST["userName"] ?? "";
   $password = $_POST["userPassword"] ?? "";
@@ -18,7 +19,7 @@ if(isset($_POST["guest_login"])) {
   $verify = verifyUser($user, $password);
   if($verify) {
     $_SESSION["admin_user_authenticated"] = true;
-    header("Location: ../public/desktop.php?login=true");
+    header("Location: ../public/admin_desktop.php?login=true");
     exit();
 
   } else {

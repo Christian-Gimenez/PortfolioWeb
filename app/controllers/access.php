@@ -8,8 +8,11 @@ session_start();
 
 if(isset($_POST["guest_login"])) {
   $_SESSION["admin_user_authenticated"] = false;
+  $_SESSION["guest_user_authenticated"] = true;
   $_SESSION["first_login"] = true;
-  header("Location: ../public/desktop.php?login=true");
+  $_SESSION["token"] = hash("sha256", uniqid());
+
+  header("Location: ../public/desktop.php?token={$_SESSION['token']}");
   exit();
 
 } else if (isset($_POST["ok"])) {
@@ -17,9 +20,12 @@ if(isset($_POST["guest_login"])) {
   $password = $_POST["userPassword"] ?? "";
   require_once "../models/db_methods.php";
   $verify = verifyUser($user, $password);
+
   if($verify) {
+    $_SESSION["token"] = hash("sha256", uniqid());
     $_SESSION["admin_user_authenticated"] = true;
-    header("Location: ../public/admin_desktop.php?login=true");
+    $_SESSION["guest_user_authenticated"] = false;
+    header("Location: ../public/admin_desktop.php?token={$_SESSION['token']}");
     exit();
 
   } else {

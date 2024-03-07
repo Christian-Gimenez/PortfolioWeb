@@ -7,13 +7,13 @@ error_reporting(E_ALL);
 session_start();
 
 require_once "../views/headLoginView.php";
-require_once "../controllers/windowController.php";
+require_once "./windowController.php";
 
 if(isset($_GET["login"])) {
   if($_GET["login"] === "error") {
-    createErrorWindow("Login Error", "./win95-icons/png/media_player_stream_no.png", "
+    createErrorWindow("Login Error", "../../public/win95-icons/png/media_player_stream_no.png", "
     <figure class='errorMessage'>
-      <img src='./win95-icons/png/msg_error-0.png'/>
+      <img src='../../public/win95-icons/png/msg_error-0.png'/>
       <figcaption>
         Incorrect user credentials. <br/>Please, if you are not an administrator, <b>log in as a guest</b>
       </figcaption>
@@ -26,10 +26,10 @@ if(isset($_GET["login"])) {
   
   } 
 } else {
-  createWindowLogin("Welcome to Christian-Gimenez's PortfolioWeb", "./win95-icons/png/user_computer-1.png", "
-    <form action='" . htmlspecialchars("../controllers/access.php") . "' method='POST'>
+  createWindowLogin("Welcome to Christian-Gimenez's PortfolioWeb", "../../public/win95-icons/png/user_computer-1.png", "
+    <form action='" . htmlspecialchars("../access.php") . "' method='POST'>
       <figure>
-        <img src='./win95-icons/png/key_padlock-0.png'/>
+        <img src='../../public/win95-icons/png/key_padlock-0.png'/>
       </figure>
       
       <div>

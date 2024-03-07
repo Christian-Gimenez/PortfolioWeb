@@ -14,10 +14,10 @@ if(isset($_GET["LogOut"])) {
     
   } else if ($_GET["LogOut"] === "No") {
     if($_SESSION["admin_user_authenticated"]) {
-      header("Location: ../public/desktop.php?admin_login=true");
+      header("Location: ../public/desktop.php?token={$_SESSION['token']}");
       exit();
     } else {
-      header("Location: ../public/desktop.php?guest_login=true");
+      header("Location: ../public/desktop.php?token={$_SESSION['token']}");
       exit();
     }
   }

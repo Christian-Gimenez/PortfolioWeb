@@ -75,7 +75,7 @@ if (isset($_SESSION["admin_user_authenticated"])) {
     <figure class='errorMessage'>
       <img src='./win95-icons/png/msg_error-0.png'/>
       <figcaption>
-        Forbidden: You can not access. <br/>Please, if you are not an administrator, <b>log in as a guest</b>
+        <strong>Forbidden: You can not access.</strong> <br/>Please, if you are not an administrator, <b>log in as a guest</b>
       </figcaption>
     </figure>
   
@@ -89,7 +89,7 @@ if (isset($_SESSION["admin_user_authenticated"])) {
     <figure class='errorMessage'>
       <img src='./win95-icons/png/msg_error-0.png'/>
       <figcaption>
-        Forbidden: You can not access. <br/>Please, if you are not an administrator, <b>log in as a guest</b>
+        <strong>Forbidden: You can not access.</strong> <br/>Please, if you are not an administrator, <b>log in as a guest</b>
       </figcaption>
     </figure>
   

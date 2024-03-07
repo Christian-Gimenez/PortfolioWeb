@@ -34,7 +34,7 @@ if(isset($_GET["login"])) {
       
       <div>
         <p>Type a user name and password to log on to PortfolioWeb.
-        <br/>If you don't have an administrator's account, you can log in as a Guest.</p>
+        <br/>If you don't have an administrator's account, <u>you can <strong>log in as a Guest</strong></u>.</p>
         <label for='userName'><u>U</u>ser name:</label>
         <input type='text' id='userName' name='userName'/>
         <br/>

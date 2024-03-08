@@ -6,9 +6,9 @@ error_reporting(E_ALL);
 
 session_start();
 
-require_once "../views/headView.php";
-require_once "../windowController.php";
-require_once "../views/desktopIconsView.php";
+require_once "/var/www/portfolio/app/views/headView.php";
+require_once "/var/www/portfolio/app/controllers/windowController.php";
+require_once "/var/www/portfolio/app/views/desktopIconsView.php";
 
 if (isset($_SESSION["admin_user_authenticated"])) {
   if ($_SESSION["admin_user_authenticated"]) {
@@ -35,65 +35,65 @@ if (isset($_SESSION["admin_user_authenticated"])) {
         <h2>Portfolio<span>Web</span></h2>
       </div>
       <form class="item-menu" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
-        <button type="submit" name="Projects"><img src="../../public/win95-icons/png/shell_window6-0.png" />Projects</button>
+        <button type="submit" name="Projects"><img src="/var/www/portfolio/public/win95-icons/png/shell_window6-0.png" />Projects</button>
       </form>
 
       <form class="item-menu" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
-        <button type="submit" name="About"><img src="../../public/win95-icons/png/help_book_cool-0.png" alt="">About me</button>
+        <button type="submit" name="About"><img src="/var/www/portfolio/public/win95-icons/png/help_book_cool-0.png" alt="">About me</button>
       </form>
 
       <form class="item-menu" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
-        <button type="submit" name="Knowledge"><img src="../../public/win95-icons/png/program_manager-1.png" alt="">Knowledge</button>
+        <button type="submit" name="Knowledge"><img src="/var/www/portfolio/public/win95-icons/png/program_manager-1.png" alt="">Knowledge</button>
       </form>
 
       <form class="item-menu" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
-        <button type="submit" name="Education"><img src="../../public/win95-icons/png/certificate_seal.png" alt="">Education</button>
+        <button type="submit" name="Education"><img src="/var/www/portfolio/public/win95-icons/png/certificate_seal.png" alt="">Education</button>
       </form>
 
       <form class="item-menu" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
-        <button type="submit" name="Experience"><img src="../../public/win95-icons/png/user_card.png" alt="">Experience</button>
+        <button type="submit" name="Experience"><img src="/var/www/portfolio/public/win95-icons/png/user_card.png" alt="">Experience</button>
       </form>
 
       <form class="item-menu" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
-        <button type="submit" name="Contact"><img src="../../public/win95-icons/png/outlook_express-5.png" alt="">Contact</button>
+        <button type="submit" name="Contact"><img src="/var/www/portfolio/app/public/win95-icons/png/outlook_express-5.png" alt="">Contact</button>
       </form>
 
       <form class="item-menu" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
-        <button type="submit" name="LogOff"><img src="../../public/win95-icons/png/keys-5.png" alt="">Log Off...</button>
+        <button type="submit" name="LogOff"><img src="/var/www/portfolio/public/win95-icons/png/keys-5.png" alt="">Log Off...</button>
       </form>
 
       <form class="item-menu" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
-        <button type="submit" name="ShutDown"><img src="../../public/win95-icons/png/shut_down_cool-5.png" alt="">Shut Down...</button>
+        <button type="submit" name="ShutDown"><img src="/var/www/portfolio/public/win95-icons/png/shut_down_cool-5.png" alt="">Shut Down...</button>
       </form>
 
     </div>
 
 <?php
-    require_once "../views/footerView.php";
+    require_once "/var/www/portfolio/app/views/footerView.php";
   } else {
-    createErrorWindow("Login Error", "../../public/win95-icons/png/media_player_stream_no.png", "
+    createErrorWindow("Login Error", "/var/www/portfolio/public/win95-icons/png/media_player_stream_no.png", "
     <figure class='errorMessage'>
-      <img src='../../public/win95-icons/png/msg_error-0.png'/>
+      <img src='/var/www/portfolio/public/win95-icons/png/msg_error-0.png'/>
       <figcaption>
         <strong>Forbidden: You can not access.</strong> <br/>Please, if you are not an administrator, <b>log in as a guest</b>
       </figcaption>
     </figure>
   
-    <form action='" . htmlspecialchars("./login.php") . "' method='POST'>
+    <form action='" . htmlspecialchars("/var/www/portfolio/app/controllers/login.php") . "' method='POST'>
       <button type='submit' name='closeWindow'/><span>OK</span></button>
     </form>
     ");
   }
 } else {
-  createErrorWindow("Login Error", "../../public/win95-icons/png/media_player_stream_no.png", "
+  createErrorWindow("Login Error", "/var/www/portfolio/public/win95-icons/png/media_player_stream_no.png", "
     <figure class='errorMessage'>
-      <img src='../../public/win95-icons/png/msg_error-0.png'/>
+      <img src='/var/www/portfolio/public/win95-icons/png/msg_error-0.png'/>
       <figcaption>
         <strong>Forbidden: You can not access.</strong> <br/>Please, if you are not an administrator, <b>log in as a guest</b>
       </figcaption>
     </figure>
   
-    <form action='" . htmlspecialchars("./login.php") . "' method='POST'>
+    <form action='" . htmlspecialchars("/var/www/portfolio/app/controllers/login.php") . "' method='POST'>
       <button type='submit' name='closeWindow'/><span>OK</span></button>
     </form>
     ");

@@ -9,15 +9,15 @@ session_start();
 if(isset($_GET["LogOut"])) {
   if($_GET["LogOut"] === "Yes") {
     $_SESSION["admin_user_authenticated"] = false;
-    header("Location: ../public/login.php");
+    header("Location: /var/www/portfolio/app/controllers/login.php");
     exit();
     
   } else if ($_GET["LogOut"] === "No") {
     if($_SESSION["admin_user_authenticated"]) {
-      header("Location: ../public/desktop.php?token={$_SESSION['token']}");
+      header("Location: /var/www/portfolio/app/controllers/desktop.php?token={$_SESSION['token']}");
       exit();
     } else {
-      header("Location: ../public/desktop.php?token={$_SESSION['token']}");
+      header("Location: /var/www/portfolio/app/controllers/desktop.php?token={$_SESSION['token']}");
       exit();
     }
   }

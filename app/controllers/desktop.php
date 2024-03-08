@@ -11,9 +11,10 @@ require_once "./windowController.php";
 require_once "../views/desktopIconsView.php";
 
 createDesktopTemplate(6, 12, createIconsArray());
-if (isset($_SESSION["first_login"])) {
-  if ($_SESSION["first_login"]) {
-    $_SESSION["first_login"] = false;
+
+$_SESSION["first_login"] = $_SESSION["first_login"] ?? false;
+
+if ($_SESSION["first_login"]) {
     createWelcomeWindow("Welcome to my PortfolioWeb", "../../public/win95-icons/png/MOD-windows-0.png", "
     <section class='welcome'>
       <div>
@@ -46,7 +47,7 @@ if (isset($_SESSION["first_login"])) {
     //    Esta web no es solo una presentación, sino que incluye un sistema CRUD para que el usuario administrador pueda gestionar datos de manera intuitiva
     //    y con un toque retro.
     //  </p>
-  }
+  
 }
 
 

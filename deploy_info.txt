@@ -1,6 +1,6 @@
 1- In order to deploy this app, you may have this configuration on your Apache own site configuration:
 
-<VirtualHost *:8080>
+<VirtualHost *:443>
 	# The ServerName directive sets the request scheme, hostname and port that
 	# the server uses to identify itself. This is used when creating
 	# redirection URLs. In the context of virtual hosts, the ServerName
@@ -28,6 +28,12 @@
 		</IfModule>
 	</Directory>
 
+	# SSL Configuration
+	SSLEngine on
+	SSLCertificateFile /var/www/portfolio/certificates/auto_certificate.crt
+	SSLCertificateKeyFile /var/www/portfolio/certificates/auto_key.key
+	#SSLCertificateChainFile /var/www/portfolio/certificates/auto_chainfile.pem	
+
 	# Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
 	# error, crit, alert, emerg.
 	# It is also possible to configure the loglevel for particular
@@ -47,11 +53,29 @@
 
 # vim: syntax=apache ts=4 sw=4 sts=4 sr noet
 
+
+
 2- Then you must enable the 'mod_rewrite'. 
 sudo a2enmod rewrite
 
-3- Test the configuration file
+3- If is for development deployment, auto-generate SSL certificates, first we generate the private key (Password: Admin1234):
+openssl genpkey -algorithm RSA -out /var/www/portfolio/certificates/auto_private.key -aes256
+
+4- Then the certificate:
+openssl req -new -key /var/www/portfolio/certificates/auto_private.key -out /var/www/portfolio/certificates/auto_certificate.csr
+
+5- And auto signed it:
+openssl x509 -req -days 365 -in /var/www/portfolio/certificates/auto_certificate.csr -signkey /var/www/portfolio/certificates/auto_private.key -out /var/www/portfolio/certificates/auto_certificate.crt
+
+5- Enable SSL mod:
+sudo a2enmod ssl
+
+6- Test the configuration file
 sudo apache2ctl configtest
 
-4- And restart Apache daemon
+7- And restart Apache daemon
 sudo systemctl restart apache2.service
+
+8- Allow firewall ports
+sudo ufw allow 443
+sudo ufw reload

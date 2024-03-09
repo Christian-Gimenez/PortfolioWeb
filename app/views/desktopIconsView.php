@@ -1,7 +1,7 @@
 <?php
 function createDesktopIcon($iconName, $iconImg, $iconTitle, $url = "") {
   $icon = "
-  <form class='formIcon' action=' " . htmlspecialchars($_SERVER["PHP_SELF"]) . "' method='GET' id='$iconName' draggable='true'>
+  <form class='formIcon' action=' " . htmlspecialchars(parse_url($_SERVER["REQUEST_URI"])["path"]) . "' method='GET' id='$iconName' draggable='true'>
     <button type='submit' name='$iconName'>
       <img src='$iconImg' alt='' draggable='false'/>
       <h3>$iconTitle</h3>

@@ -6,18 +6,23 @@ error_reporting(E_ALL);
 
 session_start();
 
+require_once "/var/www/portfolio/app/router/base_dir.php";
+
 if(isset($_GET["LogOut"])) {
   if($_GET["LogOut"] === "Yes") {
     $_SESSION["admin_user_authenticated"] = false;
-    header("Location: /var/www/portfolio/app/controllers/login.php");
+    session_destroy();
+    header("Location: /");
     exit();
     
   } else if ($_GET["LogOut"] === "No") {
+    $_SESSION["token"] = hash("sha256", uniqid());
+
     if($_SESSION["admin_user_authenticated"]) {
-      header("Location: /var/www/portfolio/app/controllers/desktop.php?token={$_SESSION['token']}");
+      header("Location: /admin_desktop");
       exit();
     } else {
-      header("Location: /var/www/portfolio/app/controllers/desktop.php?token={$_SESSION['token']}");
+      header("Location: /desktop");
       exit();
     }
   }

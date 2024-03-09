@@ -6,30 +6,31 @@ error_reporting(E_ALL);
 
 session_start();
 
-require_once "/var/www/portfolio/app/views/headLoginView.php";
-require_once "/var/www/portfolio/app/controllers/windowController.php";
+require_once "/var/www/portfolio/app/router/base_dir.php";
+require_once APP_DIR . "views/headLoginView.php";
+require_once APP_DIR . "controllers/windowController.php";
 
 if(isset($_GET["login"])) {
   if($_GET["login"] === "error") {
-    createErrorWindow("Login Error", "/var/www/portfolio/public/win95-icons/png/media_player_stream_no.png", "
+    createErrorWindow("Login Error", "./win95-icons/png/media_player_stream_no.png", "
     <figure class='errorMessage'>
-      <img src='/var/www/portfolio/public/win95-icons/png/msg_error-0.png'/>
+      <img src='./win95-icons/png/msg_error-0.png'/>
       <figcaption>
         Incorrect user credentials. <br/>Please, if you are not an administrator, <b>log in as a guest</b>
       </figcaption>
     </figure>
   
-    <form action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "' method='POST'>
+    <form action='" . htmlspecialchars("/") . "' method='POST'>
       <button type='submit' name='closeWindow'/><span>OK</span></button>
     </form>
     ");
   
   } 
 } else {
-  createWindowLogin("Welcome to Christian-Gimenez's PortfolioWeb", "/var/www/portfolio/public/win95-icons/png/user_computer-1.png", "
-    <form action='" . htmlspecialchars("/var/www/portfolio/app/controllers/access.php") . "' method='POST'>
+  createWindowLogin("Welcome to Christian-Gimenez's PortfolioWeb", "./win95-icons/png/user_computer-1.png", "
+    <form action='" . htmlspecialchars("/access") . "' method='POST'>
       <figure>
-        <img src='/var/www/portfolio/public/win95-icons/png/key_padlock-0.png'/>
+        <img src='./win95-icons/png/key_padlock-0.png'/>
       </figure>
       
       <div>
@@ -57,5 +58,5 @@ if(isset($_GET["login"])) {
 
 
 
-require_once "/var/www/portfolio/app/views/footerView.php";
+require_once APP_DIR . "views/footerView.php";
 ?>

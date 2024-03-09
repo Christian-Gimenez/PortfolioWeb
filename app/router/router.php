@@ -1,25 +1,27 @@
 <?php
+require_once "/var/www/portfolio/app/router/base_dir.php";
 
 session_start();
 
 $uri = parse_url($_SERVER["REQUEST_URI"])["path"];
 
-$rutes = [
-  "/" => "/var/www/portfolio/app/controllers/login.php",
-  "/desktop" => "/var/www/portfolio/app/controllers/desktop.php",
-  "/admin_desktop" => "/var/www/portfolio/app/controllers/admin_desktop.php",
-  "/access" => "/var/www/portfolio/app/controllers/access.php",
-  "/logoff" => "/var/www/portfolio/app/controllers/logoff.php",
-  "/window" => "/var/www/portfolio/app/controllers/windowController.php"
+$routes = [
+  "/" => APP_DIR . "controllers/login.php",
+  "/desktop" => APP_DIR . "controllers/desktop.php",
+  "/admin_desktop" => APP_DIR . "controllers/admin_desktop.php",
+  "/access" => APP_DIR . "controllers/access.php",
+  "/logoff" => APP_DIR . "controllers/logoff.php",
+  "/window" => APP_DIR . "controllers/windowController.php",
+  "/404" => APP_DIR . "views/404.php"
 ];
 
-function routerToController($rutes, $uri, $auth) {
+function routerToController($routes, $uri, $auth) {
   if($uri === "/") {
-    require_once $rutes[$uri];
-  } else if(array_key_exists($uri, $rutes)) {
+    require_once $routes[$uri];
+  } else if(array_key_exists($uri, $routes)) {
 
     if($auth) {
-      require_once $rutes[$uri];
+      require_once $routes[$uri];
     } else {
       header("Location: /");
       exit();
@@ -32,7 +34,7 @@ function routerToController($rutes, $uri, $auth) {
 
 function abort($code = 404) {
   http_response_code($code);
-  require_once "/var/www/portfolio/app/views/{$code}.php";
+  header("Location: /{$code}");
   die();
 }
 
@@ -45,10 +47,10 @@ function verifyTokenAndUser($token) {
   return false;
 }
 
-$token = isset($_GET["token"]) ? $_GET["token"] : "";
+$token = isset($_SESSION["token"]) ? $_SESSION["token"] : "";
 
 $auth = verifyTokenAndUser($token);
 
-routerToController($rutes, $uri, $auth);
+routerToController($routes, $uri, $auth);
 
 ?>

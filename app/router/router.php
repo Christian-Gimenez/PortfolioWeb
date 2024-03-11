@@ -1,18 +1,18 @@
 <?php
-require_once "/var/www/portfolio/app/router/base_dir.php";
+// require_once "/var/www/portfolio/app/router/base_dir.php";
 
 session_start();
 
 $uri = parse_url($_SERVER["REQUEST_URI"])["path"];
 
 $routes = [
-  "/" => APP_DIR . "controllers/login.php",
-  "/desktop" => APP_DIR . "controllers/desktop.php",
-  "/admin_desktop" => APP_DIR . "controllers/admin_desktop.php",
-  "/access" => APP_DIR . "controllers/access.php",
-  "/logoff" => APP_DIR . "controllers/logoff.php",
-  "/window" => APP_DIR . "controllers/windowController.php",
-  "/404" => APP_DIR . "views/404.php"
+  "/" => APP_DIR . "app/controllers/login.php",
+  "/desktop" => APP_DIR . "app/controllers/desktop.php",
+  "/admin_desktop" => APP_DIR . "app/controllers/admin_desktop.php",
+  "/access" => APP_DIR . "app/controllers/access.php",
+  "/logoff" => APP_DIR . "app/controllers/logoff.php",
+  "/window" => APP_DIR . "app/controllers/windowController.php",
+  "/404" => APP_DIR . "app/views/404.php"
 ];
 
 function routerToController($routes, $uri, $auth) {

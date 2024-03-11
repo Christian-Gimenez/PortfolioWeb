@@ -1,5 +1,5 @@
 <?php
-require_once "env.php";
+require_once APP_DIR . "app/models/env.php";
 
 $utf8 = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
 try {

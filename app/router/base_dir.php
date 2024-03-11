@@ -1,4 +1,4 @@
 <?php
-define("APP_DIR", "/var/www/app/");
-define("PUBLIC_DIR", "/var/www/portfolio/public/");
+define("APP_DIR", __DIR__);
+// define("PUBLIC_DIR", "/var/www/portfolio/public/");
 ?>

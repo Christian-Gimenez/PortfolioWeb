@@ -6,10 +6,10 @@ error_reporting(E_ALL);
 
 session_start();
 
-require_once require_once "/var/www/portfolio/app/router/base_dir.php";
-require_once APP_DIR . "views/headView.php";
-require_once APP_DIR . "controllers/windowController.php";
-require_once APP_DIR . "views/desktopIconsView.php";
+// require_once require_once "/var/www/portfolio/app/router/base_dir.php";
+require_once APP_DIR . "app/views/headView.php";
+require_once APP_DIR . "app/controllers/windowController.php";
+require_once APP_DIR . "app/views/desktopIconsView.php";
 
 if (isset($_SESSION["admin_user_authenticated"])) {
   if ($_SESSION["admin_user_authenticated"]) {
@@ -70,7 +70,7 @@ if (isset($_SESSION["admin_user_authenticated"])) {
     </div>
 
 <?php
-    require_once APP_DIR . "views/footerView.php";
+    require_once APP_DIR . "app/views/footerView.php";
   } else {
     createErrorWindow("Login Error", "./win95-icons/png/media_player_stream_no.png", "
     <figure class='errorMessage'>

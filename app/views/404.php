@@ -1,3 +1,4 @@
 <?php
-header("Location: ../public/login.php?login=error");
+// header("Location: /login?login=error");
+echo "404.";
 ?>

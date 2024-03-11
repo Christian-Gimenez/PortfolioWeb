@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 session_start();
 
-require_once "/var/www/portfolio/app/router/base_dir.php";
+// require_once "/var/www/portfolio/app/router/base_dir.php";
 
 if(isset($_GET["LogOut"])) {
   if($_GET["LogOut"] === "Yes") {

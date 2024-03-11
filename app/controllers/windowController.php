@@ -1,6 +1,6 @@
 <?php
-require_once "/var/www/portfolio/app/router/base_dir.php";
-require_once APP_DIR . "views/windowView.php";
+// require_once "/var/www/portfolio/app/router/base_dir.php";
+require_once APP_DIR . "app/views/windowView.php";
 
 if (isset($_GET["Projects"])) {
   //Last to implement

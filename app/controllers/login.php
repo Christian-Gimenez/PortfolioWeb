@@ -4,11 +4,11 @@ ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
 error_reporting(E_ALL);
 
-session_start();
+// session_start();
 
-require_once "/var/www/portfolio/app/router/base_dir.php";
-require_once APP_DIR . "views/headLoginView.php";
-require_once APP_DIR . "controllers/windowController.php";
+// require_once "/var/www/portfolio/app/router/base_dir.php";
+require_once APP_DIR . "app/views/headLoginView.php";
+require_once APP_DIR . "app/controllers/windowController.php";
 
 if(isset($_GET["login"])) {
   if($_GET["login"] === "error") {
@@ -58,5 +58,5 @@ if(isset($_GET["login"])) {
 
 
 
-require_once APP_DIR . "views/footerView.php";
+require_once APP_DIR . "app/views/footerView.php";
 ?>

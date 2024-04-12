@@ -1,0 +1,353 @@
+.window {
+  font-size: 20px;
+  position: absolute;
+  left: 20%;
+  top: 5%;
+  /* transform: translate(-50%, -50%); */
+  z-index: 10;
+  min-width: 450px;
+  display: flex;
+  background-color: var(--navbar-gray);
+  margin: 3px 3px 0px 0px;
+  box-shadow: 0.75px 0.75px 0px 0.75px #090a0a;
+  border: 3px outset var(--light-gray);
+  padding: 3px;
+  display: flex;
+  flex-direction: column;
+}
+
+.windowLogin,
+.windowError {
+  max-width: 930px;
+  display: flex;
+  position: initial;
+  background-color: var(--navbar-gray);
+  margin: 3px 3px 0px 0px;
+  box-shadow: 0.75px 0.75px 0px 0.75px #090a0a;
+  border: 3px outset var(--light-gray);
+  padding: 3px;
+  display: flex;
+  flex-direction: column;
+}
+
+.windowLogin>nav,
+.windowError>nav,
+.windowLogout>nav {
+  user-select: none;
+  cursor: initial !important;
+}
+
+.windowLogin>main>form {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.windowLogin>main>form>figure>img {
+  margin: 20px 0 0 0;
+  width: 65px;
+  height: 65px;
+}
+
+.windowLogin>main>form>div:first-child {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.windowLogin>main>form label[for=userName] {
+  margin-right: 27px;
+}
+
+.windowLogin>main>form label[for=userPassword] {
+  margin-right: 34.5px;
+}
+
+.windowLogin>main>form input[type=text],
+.windowLogin>main>form input[type=password] {
+  font-family: "Windows Regular";
+  font-size: 20px;
+  border: 2.25px inset var(--light-gray);
+  box-shadow: inset 1.5px 1.5px 0px 0px #090a0a;
+  width: 220px;
+  height: 25px;
+  margin-bottom: 15px;
+}
+
+
+.windowLogin>main>form>div:last-child {
+  margin-top: 22.5px;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.windowLogin>main>form>div:last-child input {
+  font-size: 20px;
+  width: 120px;
+  height: 37.5px;
+  line-height: 0;
+  cursor: pointer;
+  font-family: "Windows Regular";
+  border: 1.5px outset var(--light-gray);
+  background-color: var(--navbar-gray);
+  box-shadow: 0.75px 0.75px 0px 0.75px #090a0a;
+}
+
+.windowLogin>main>form>div:last-child input:last-child {
+  box-shadow: 1.5px 1.5px 0px 2.25px #090a0a;
+}
+
+
+.windowLogin>main>form>div:last-child input:active {
+  border: 1.5px inset var(--light-gray);
+  background-color: var(--navbar-gray);
+  box-shadow: inset 1.5px 2.63px 0px 0px #090a0a;
+}
+
+.window>nav,
+.windowLogin>nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 39px;
+  background-color: var(--dark-blue);
+}
+
+.window>nav {
+  cursor: move;
+}
+
+.window h1,
+.windowLogin h1 {
+  font-size: 24px;
+  letter-spacing: 1.5px;
+  color: white;
+}
+
+.window>nav>header,
+.windowLogin>nav>header {
+  margin-left: 4.5px;
+  display: flex;
+  align-items: center;
+  gap: 7.5px;
+}
+
+.window>nav>header>img,
+.windowLogin>nav>header>img {
+  max-width: 30px;
+}
+
+.window>nav>form>input,
+.window>nav>form>button,
+.windowLogin>nav>form>input,
+.windowLogin>nav>form>button {
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 0;
+  height: 30px;
+  width: 30px;
+  margin-left: -3px;
+  border: 1.5px outset var(--light-gray);
+  background-color: var(--navbar-gray);
+  box-shadow: 0.75px 0.75px 0px 0.75px #090a0a;
+}
+
+.window>nav>form>input:active,
+.window>nav>form>button:active,
+.windowLogin>nav>form>input:active,
+.windowLogin>nav>form>button:active {
+  background-color: var(--navbar-gray);
+  box-shadow: inset 1.5px 2.63px 0px 0px #090a0a;
+}
+
+.window>nav>form>input,
+.windowLogin>nav>form>input {
+  margin-right: 4.5px;
+}
+
+.windowWithContent>main {
+  margin-top: 5px;
+  padding: 0px !important;
+  height: auto;
+  font-size: 20px;
+  background-color: var(--light-gray);
+  border: 1.5px inset var(--light-gray);
+  /* box-shadow: inset 3px 3px 1.5px 0px #090a0a; */
+}
+
+.windowWithContent>main>iframe {
+  width: 100%;
+  min-height: 256px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.window>main,
+.windowLogin>main {
+  padding: 15px;
+  height: 100%;
+  margin-right: 1.5px;
+}
+
+.windowError>main>figure>img {
+  width: 60px;
+  margin-right: 30px;
+  margin-left: -22.5px;
+}
+
+.windowError>main {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.windowError>main>form button {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  height: 30px;
+  width: 120px;
+  border: 1.5px outset var(--light-gray);
+  background-color: var(--navbar-gray);
+  box-shadow: 1.5px 1.5px 0px 2.25px #090a0a;
+}
+
+.windowError>main>form>button>span {
+  font-size: 20px;
+  font-family: "Windows Regular";
+  border: 2.25px dotted #090a0a;
+  width: 90%;
+  height: 90%;
+}
+
+.windowError>main>form button:active,
+.windowLogout>main>form input:active {
+  border: 1.5px inset var(--light-gray);
+  background-color: var(--navbar-gray);
+  /* border: 2.25px dotted #090a0a; */
+  box-shadow: inset 1.5px 2.63px 0px 0px #090a0a;
+}
+
+.errorMessage {
+  display: flex;
+}
+
+/*Log off window*/
+.blockScreen {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 3;
+}
+
+.windowLogout {
+  position: initial;
+  top: 0;
+  left: 0;
+  width: 500px;
+  z-index: 4;
+}
+
+.logOffForm {
+  margin-top: -10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logOffForm>figure {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.logOffForm>figure>img {
+  margin-left: -95px;
+  width: 50px;
+}
+
+.logOffForm>div {
+  display: flex;
+  flex-direction: row !important;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.windowLogout>main>form input {
+  cursor: pointer;
+  font-size: 20px;
+  font-family: "Windows Regular";
+  height: 30px;
+  width: 120px;
+  border: 1.5px outset var(--light-gray);
+  background-color: var(--navbar-gray);
+  box-shadow: 0.75px 0.75px 0px 0.75px #090a0a;
+}
+
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.welcome>div {
+  margin-left: -30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome>figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome .profile-img {
+  width: 200px;
+  border: 4px inset var(--light-gray);
+  background-color: var(--navbar-gray);
+  box-shadow: inset 1.5px 2.63px 0px 0px #090a0a;
+}
+
+.welcome h1 {
+
+  font-size: 30px;
+  font-family: serif;
+  color: black !important;
+}
+
+.welcome article {
+  max-width: 500px;
+  padding: 10px;
+  background-color: var(--light-gray);
+  border: 1.5px inset var(--light-gray);
+  box-shadow: inset 2px 2px 1.5px 0px #090a0a;
+}
+
+
+
+.big-logo {
+  font-family: "Franklin Gothic";
+  font-weight: 900;
+}
+
+.little-logo {
+  font-family: "Franklin Gothic";
+  font-weight: 300;
+  letter-spacing: -3px;
+  color: white;
+}

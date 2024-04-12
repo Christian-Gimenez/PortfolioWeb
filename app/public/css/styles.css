@@ -1,0 +1,299 @@
+/*Import fonts*/
+@font-face {
+  font-family: "Windows Regular";
+  src: url("../fonts/Windows_Regular.ttf");
+}
+
+@font-face {
+  font-family: "Franklin Gothic";
+  src: url("../fonts/LibreFranklin-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "Franklin Gothic Italic";
+  src: url("../fonts/LibreFranklin-Italic-VariableFont_wght.ttf");
+}
+
+/*Reset default values*/
+body,
+header,
+nav,
+section,
+main,
+article,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+div,
+img,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+/*General background, font and cursor styles*/
+body {
+  background-color: var(--bg-desktop);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-family: "Windows Regular";
+}
+
+/* 
+.desktop {
+  cursor: url("../win95-icons/cursor/arrow.cur"), auto;
+} */
+/*Only in login page*/
+.desktopLogin {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Main navbar at the bottom of the desktop*/
+.start-nav-bar {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 40.5px;
+  bottom: 0;
+  border: 3px outset var(--light-gray);
+  background-color: var(--navbar-gray);
+}
+
+/*Start button*/
+.start-nav-bar button:not([name="Calendar"]) {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  /* font-size: 18px; */
+  margin: 3px 3px 0px 3px;
+  padding-left: 3px;
+  border: 1.5px outset var(--light-gray);
+  background-color: var(--navbar-gray);
+  box-shadow: 0.75px 0.75px 0px 0.75px #090a0a;
+  width: 87px;
+  height: 37.5px;
+  font-family: "Windows Regular";
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+.start-nav-bar button div {
+  display: inline-flex;
+  gap: 1.5px;
+}
+
+.start-nav-bar button img {
+  width: 30px;
+  height: auto;
+  object-fit: contain;
+}
+
+/*When Start button is active*/
+.start-nav-bar button:active:not([name="Calendar"]) {
+  border: 1.5px inset var(--light-gray);
+  background-color: var(--navbar-gray);
+  box-shadow: inset 1.5px 2.63px 0px 0px #090a0a;
+}
+
+.start-nav-bar button:active:not([name="Calendar"]) div {
+  border: 1.2px dotted #090a0a;
+  transform: translateY(1.95px) scale(0.95);
+
+}
+
+#actualAppDisplay {
+  margin-right: auto;
+  font-size: 16px;
+  min-width: 260px;
+  font-weight: bolder;
+  padding-left: 8px;
+  padding-top: 7px;
+  height: 35px !important
+}
+
+#actualAppDisplay img {
+  max-width: 25px;
+  margin-bottom: 3px;
+  margin-right: 8px;
+}
+
+#dateTime button {
+  background-color: initial;
+  cursor: pointer;
+  margin-top: 2px;
+  margin-right: 8px;
+  border: 2px inset #fdfdfd;
+  box-shadow: inset 1px 1px 0px 0px #656565;
+  width: 100px;
+  padding: 1px;
+  height: 40px;
+  font-size: 14px;
+  font-family: "Windows Regular";
+  font-weight: 500;
+  letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+}
+
+#dateTime button span:first-of-type {
+  margin-top: 3px;
+}
+
+
+
+/*Start Menu when Start button is clicked*/
+.start-menu {
+  /*display: none;*/
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  /*1st column slim, 2nd large*/
+  grid-template-rows: repeat(10, 1fr);
+  gap: 0;
+  margin: 3px 3px 0px 0px;
+  box-shadow: 0.75px 0.75px 0px 0.75px #090a0a;
+  border: 3px outset var(--light-gray);
+  position: fixed;
+  z-index: 2;
+  bottom: 40.5px;
+  left: 0;
+  height: 408px;
+  width: 275px;
+  background-color: var(--win-gray);
+}
+
+
+
+/*Windows95 Logo in the Start Menu*/
+.ban-menu {
+  grid-column: 1;
+  /*Fill the 1st column*/
+  grid-row: span 10;
+  /*Fill all the rows*/
+  width: 45px;
+  font-family: "Franklin Gothic";
+  font-size: 26px;
+  letter-spacing: -3px;
+  font-weight: 900;
+  color: #bfc7c8;
+  background-color: var(--dark-gray);
+}
+
+/*Putting the logo in the right place*/
+.ban-menu>h2 {
+  transform: rotate(-90deg) translateX(-355px);
+}
+
+.ban-menu>h2>span {
+  font-family: "Franklin Gothic";
+  font-weight: 200;
+  color: #e3e4e4;
+}
+
+/*Each item on the Menu*/
+.item-menu {
+  font-size: 20px;
+  padding-left: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  display: flex;
+}
+
+.item-menu button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+  /* cursor: url("../win95-icons/cursor/Cursor_15.cur"), pointer; */
+  cursor: pointer;
+  outline: inherit;
+}
+
+.item-menu img {
+  width: 35px;
+}
+
+.start-menu .item-menu:nth-child(7) {
+  border-bottom: inset 1px var(--dark-gray);
+}
+
+.start-menu .item-menu:nth-child(8) {
+  border-top: outset 1px white;
+}
+
+/*
+.start-menu a {
+  color: black;
+  text-decoration: none;
+}*/
+
+/*When passing the cursor below each item*/
+.item-menu:hover,
+.item-menu:active {
+  background-color: var(--dark-blue);
+  color: white;
+}
+
+/*Horizontal Media Queries*/
+@media(max-width: 430px) {
+  .start-nav-bar {
+    height: 67.5px;
+  }
+
+  .start-nav-bar button:not([name="Calendar"]) {
+    box-shadow: 1.5px 3px 0px 1.5px #090a0a;
+    border: 5.25px outset var(--light-gray);
+    width: 127.5px;
+    height: 64.5px;
+    font-size: 33px;
+  }
+
+  .start-nav-bar button:not([name="Calendar"]) img {
+    width: 45px;
+  }
+
+  .start-nav-bar button:active:not([name="Calendar"]) div {
+    border: 2.25px dotted #090a0a;
+    padding: 6px;
+
+  }
+
+  .start-menu {
+    width: 100%;
+    height: 525px;
+    grid-template-columns: 20% 80%;
+    bottom: 67.5px;
+  }
+
+  .ban-menu {
+    font-size: 55px;
+    width: 100%;
+  }
+
+  .ban-menu>h2 {
+    transform: rotate(-90deg) translateX(-420px);
+  }
+
+  .item-menu {
+    font-size: 36px;
+  }
+}

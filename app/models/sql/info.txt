@@ -1,0 +1,6 @@
+#Comand to import the portfolio_DB on LAMP:
+sudo mysql -u root -p < portfolio_DB.sql
+
+#Admin user: 
+User_Name: Administrator
+User_Password: Admin1234

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\WindowController;
+use App\Http\Controllers\DesktopController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//User Login
+Route::get('/', [WindowController::class, 'showLogin']);
+
+Route::post('/access', [DesktopController::class, 'access'])->name('access');
+
+Route::get('/desktop', [DesktopController::class, 'showDesktop'])->middleware('auth');
+

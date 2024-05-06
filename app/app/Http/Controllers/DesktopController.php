@@ -15,16 +15,18 @@ class DesktopController extends Controller
         if ($request->has('guest_login')) {
             $token = Str::random(40);
             $request->session()->put('token', $token);
-            return redirect('/desktop')->with('login', 'true');
+            return redirect('/desktop')->with('token', $token);
         } elseif ($request->has('ok')) {
-            // Aquí va tu lógica de verificación de usuario
+            //Falta implementar
         } else {
             return redirect('/')->with('login', 'error');
         }
     }
 
-    public function showDesktop()
+    public function showDesktop(Request $request)
     {
-        // Aquí va tu lógica para mostrar el escritorio
+        $first_login = $request->session()->get('first_login', true);
+        $token = $request->session()->get('token');
+        return view('desktop', ['first_login' => $first_login, 'token' => $token]);
     }
 }

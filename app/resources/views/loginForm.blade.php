@@ -1,4 +1,5 @@
 <form action="{{ url('/access') }}" method="POST">
+    @csrf
     <figure>
       <img src="{{ asset('win95-icons/png/key_padlock-0.png') }}"/>
     </figure>

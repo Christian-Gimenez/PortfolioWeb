@@ -20,5 +20,5 @@ Route::get('/', [WindowController::class, 'showLogin']);
 
 Route::post('/access', [DesktopController::class, 'access'])->name('access');
 
-Route::get('/desktop', [DesktopController::class, 'showDesktop'])->middleware('auth');
+Route::get('/desktop', [DesktopController::class, 'showDesktop'])->middleware('auth')->name('desktop');
 

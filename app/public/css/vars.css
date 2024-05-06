@@ -1,0 +1,9 @@
+:root {
+  user-select: none;
+  --dark-gray: #888890;
+  --navbar-gray: #c0c0c0;
+  --light-gray: #f3f3f2; 
+  --win-gray: #c3c7cb;
+  --bg-desktop: #008081;
+  --dark-blue: #0000aa;
+}

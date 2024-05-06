@@ -1,0 +1,49 @@
+.hide-element {
+  display: none !important;
+}
+
+.hide-window {
+  display: none !important;
+  /* transition: transform 2s ease-out; */
+}
+
+.invisible {
+  opacity: 0;
+  cursor: default !important;
+}
+
+.full-screen {
+  top: 0 !important;
+  left: 0 !important;
+  width: 100%;
+  height: 95vh;
+  z-index: 1 !important;
+}
+
+.transparent main,
+.transparent nav {
+  visibility: hidden !important;
+}
+
+.transparent {
+  background-color: transparent !important;
+  border-width: 7.5px !important;
+  border-image: dashed 3px inset #646464 !important;
+  box-shadow: none !important;
+}
+
+.hide-window-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.dragged-icon {
+  background-color: rgba(0, 41, 177, 0.5);
+}
+
+.active-window {
+  background-color: var(--light-gray) !important;
+  box-shadow: inset 1.5px 2.63px 0px 0px #090a0a !important;
+}
